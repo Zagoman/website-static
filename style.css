@@ -1,12 +1,41 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 * {
   box-sizing: border-box;
   margin: 0;
+  padding: 0;
+}
+body {
+  font-family: "Montserrat", sans-serif;
+}
+a {
+  text-decoration: none;
 }
 html {
   scroll-behavior: smooth;
 }
 img {
   max-width: 100%;
+}
+nav {
+  padding-inline: 2rem;
+  height: 100%;
+}
+.logo {
+  font-size: 2em;
+  font-weight: 700;
+}
+nav ul {
+  display: flex;
+  font-weight: 600;
+
+  justify-content: end;
+  height: 100%;
+  align-items: center;
+  list-style: none;
+  gap: 2rem;
+}
+li:first-child {
+  margin-right: auto;
 }
 .grid__main {
   display: grid;
@@ -16,8 +45,11 @@ img {
 }
 header {
   grid-column: 1/ -1;
-  background-color: red;
+  background-color: rgb(255, 255, 255);
+  box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.1);
   order: -1;
+  position: relative;
+  z-index: 1000;
 }
 main {
   background-color: rgb(241, 241, 241);
@@ -32,7 +64,7 @@ footer {
 }
 aside {
   grid-column-start: 1 / span 1;
-  background-color: orange;
+  background-color: rgb(255, 255, 255);
   order: 0;
 }
 .grid__pl {
