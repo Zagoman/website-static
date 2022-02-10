@@ -6,9 +6,13 @@ let param = urlParams.get("category")
   ? urlParams.get("subcategory")
   : "";
 
-const url = `https://kea-alt-del.dk/t7/api/products?${
-  urlParams.get("subcategory") ? "sub" : ""
-}category=${param}`;
+const url = `https://kea-alt-del.dk/t7/api/products${
+  urlParams.get("category")
+    ? `?category=${param}`
+    : urlParams.get("subcategory")
+    ? `?subcategory=${param}`
+    : ""
+}`;
 // fetch API
 fetch(url)
   .then((res) => res.json())
