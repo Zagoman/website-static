@@ -16,6 +16,7 @@ html {
 img {
   max-width: 100%;
 }
+/* ?Header Nav */
 nav {
   padding-inline: 2rem;
   height: 100%;
@@ -37,6 +38,22 @@ nav ul {
 li:first-child {
   margin-right: auto;
 }
+/* ?Aside */
+aside {
+  grid-column-start: 1 / span 1;
+  background-color: rgb(255, 255, 255);
+  order: 0;
+  overflow: auto;
+}
+#aside__nav ul {
+  font-weight: 600;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto;
+  grid-row-gap: 0.5rem;
+}
+
+/* ?Main */
 .grid__main {
   display: grid;
   grid-template-rows: 10vh 80vh 10vh;
@@ -57,16 +74,14 @@ main {
   overflow: auto;
   padding: 2rem;
 }
+
+/* ?Footer */
 footer {
   grid-column: 1/-1;
   background-color: aqua;
   order: 2;
 }
-aside {
-  grid-column-start: 1 / span 1;
-  background-color: rgb(255, 255, 255);
-  order: 0;
-}
+
 .grid__pl {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));

@@ -1,6 +1,14 @@
 const urlParams = new URLSearchParams(window.location.search);
-const category = urlParams.get("category");
-const url = `https://kea-alt-del.dk/t7/api/products?category=${category}`;
+
+let param = urlParams.get("category")
+  ? urlParams.get("category")
+  : urlParams.get("subcategory")
+  ? urlParams.get("subcategory")
+  : "";
+
+const url = `https://kea-alt-del.dk/t7/api/products?${
+  urlParams.get("subcategory") ? "sub" : ""
+}category=${param}`;
 // fetch API
 fetch(url)
   .then((res) => res.json())
@@ -28,6 +36,7 @@ fetch(url)
 */
 const template = document.querySelector("template").content;
 const showProduct = (elem) => {
+  console.log(elem);
   const clone = template.cloneNode(true);
 
   //change content
