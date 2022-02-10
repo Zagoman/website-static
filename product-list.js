@@ -1,6 +1,6 @@
 const urlParams = new URLSearchParams(window.location.search);
 
-let param = urlParams.get("category")
+const param = urlParams.get("category")
   ? urlParams.get("category")
   : urlParams.get("subcategory")
   ? urlParams.get("subcategory")
@@ -39,6 +39,7 @@ fetch(url)
       </template>
 */
 const template = document.querySelector("template").content;
+document.querySelector(".heading__main").textContent = param ? param : "All";
 const showProduct = (elem) => {
   console.log(elem);
   const clone = template.cloneNode(true);
