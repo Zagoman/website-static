@@ -198,6 +198,7 @@ footer {
     grid-column: 1 / 2;
     background-color: var(--clr-white);
     order: 0;
+    padding: 1rem;
   }
   #aside__nav {
     padding-top: 2rem;
