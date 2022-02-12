@@ -47,18 +47,24 @@ main {
   overflow: auto;
 }
 /* ?Product List */
-article {
-  position: relative;
-}
+
 .grid__pl {
   display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   grid-gap: 2rem;
+}
+.product {
+  display: grid;
+  align-items: top;
 }
 .product__info {
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: auto;
   grid-gap: 0.2rem;
+  position: relative;
+  align-items: top;
+  height: 100%;
 }
 .product__type {
   opacity: 0.8;
@@ -72,7 +78,7 @@ article {
   padding: 0.5rem;
   font-weight: 600;
   position: absolute;
-  bottom: 0;
+  bottom: 1rem;
   right: 0;
 }
 .product__price {
@@ -92,6 +98,18 @@ article {
   font-weight: 600;
   margin-top: 1rem;
   transition: background-color 0.2s ease;
+}
+.product {
+  box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.1);
+  background-color: var(--clr-white);
+  border-radius: 4px;
+}
+.product__img {
+  width: 100%;
+  aspect-ratio: 4/5;
+  object-fit: cover;
+  object-position: top;
+  border-radius: 4px 4px 0px 0px;
 }
 
 /* ?header */
@@ -138,12 +156,13 @@ footer {
             MEDIA QUERIES
 
 !*/
-@media only screen and (min-width: 37em) {
+@media only screen and (min-width: 800px) {
   /* ?Header Nav */
 
   /* ?Aside */
   aside {
-    grid-column-start: 1 / span 1;
+    display: block;
+    grid-column: 1 / 2;
     background-color: var(--clr-white);
     order: 0;
   }
@@ -162,16 +181,15 @@ footer {
 
   /* ?Main */
   .grid__main {
-    display: grid;
-    grid-template-rows: 10vh 80vh 10vh;
     grid-template-columns: 1fr 3fr;
-    min-height: 100vh;
+    grid-template-rows: 10vh 90vh 60px;
   }
   main {
-    background-color: var(--clr-white);
     order: 1;
-    overflow: auto;
-    padding: 2rem;
+    grid-column: 2/-1;
+  }
+  .heading__main {
+    grid-column: 1/-1;
   }
 
   /* ?Footer */
@@ -181,27 +199,9 @@ footer {
     order: 2;
   }
   /* ?Product-list */
-  .grid__pl {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    grid-gap: 2rem;
-  }
-  .product {
-    box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.1);
-    background-color: var(--clr-white);
-    border-radius: 4px;
-  }
-  .product__img {
-    width: 100%;
-    aspect-ratio: 1/1;
-    object-fit: cover;
-    object-position: center;
-    border-radius: 4px 4px 0px 0px;
-  }
-  .product__info {
-    padding: 1rem;
-  }
-  .heading__main {
-    grid-column: 1/-1;
+}
+@media only screen and (min-width: 962px) {
+  .product__link:hover {
+    background-color: var(--clr-pri);
   }
 }
