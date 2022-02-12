@@ -7,7 +7,7 @@
     <title>Product</title>
     <link rel="stylesheet" href="style.css" />
   </head>
-  <body class="grid__main">
+  <body class="grid__main is--product">
     <header>
       <nav>
         <ul>
@@ -22,15 +22,21 @@
     </header>
     <main class="grid__product"></main>
     <template>
-      <img src="./media/1163.webp" alt="Product Image" class="product__img" />
+      <img
+        src="./media/1163.webp"
+        alt="Product Image"
+        class="product__img is--product"
+      />
       <section class="purchase__box">
         <h3 class="purchase__title">
           Sahara Team India Fanwear Round Neck Jersey
         </h3>
-        <p>
+        <p class="product__type">
           <span class="purchase__tag"> Tshirts</span> |
           <span class="purchase__brand">Nike</span>
         </p>
+        <p class="price-tag"></p>
+        <p class="discount-tag"></p>
         <form action="" class="form">
           <label for="" class="form__label"
             >Choose a size
@@ -43,8 +49,7 @@
           ><button type="">Add to basket</button>
         </form>
       </section>
-      <section>
-        <h2></h2>
+      <section class="info__box">
         <dl>
           <dt>Model name</dt>
           <dd class="dd__model-name">
@@ -59,7 +64,6 @@
         <p class="desc__moto">Nike, creating experiences for today’s athlete</p>
       </section>
     </template>
-    <aside></aside>
     <footer></footer>
     <script src="main.js"></script>
     <script src="product.js"></script>

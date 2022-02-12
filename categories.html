@@ -11,6 +11,9 @@
     <header>
       <nav>
         <ul>
+          <li>
+            <a href="./index.html" class="logo">Legen<span>Dary</span></a>
+          </li>
           <li><a href="categories.html">Categories</a></li>
           <li><a href="product-list.html">Product List</a></li>
           <li><a href="product.html">Product</a></li>
@@ -19,7 +22,10 @@
     </header>
     <main>
       <h1>Categories</h1>
-      <section class="letter-links">
+      <section id="letter__a" class="letter__group">
+        <ol></ol>
+      </section>
+      <!-- <section class="letter-links">
         <ol>
           <li><a href="" id="letter__a">A</a></li>
           <li><a href="" id="letter__b">B</a></li>
@@ -30,76 +36,25 @@
           <li><a href="" id="letter__g">G</a></li>
           <li><a href="" id="letter__h">H</a></li>
         </ol>
-      </section>
-      <div class="brand-list">
-        <section id="letter__a" class="letter__group">
-          <h2>A</h2>
-          <ol>
-            <li><a href="product-list.html">Lorem.</a></li>
-            <li><a href="product-list.html">Recusandae!</a></li>
-            <li><a href="product-list.html">Repellat.</a></li>
-          </ol>
-        </section>
-        <section id="letter__b" class="letter__group">
-          <h2>B</h2>
-          <ol>
-            <li><a href="product-list.html">Lorem.</a></li>
-            <li><a href="product-list.html">Recusandae!</a></li>
-            <li><a href="product-list.html">Repellat.</a></li>
-          </ol>
-        </section>
-        <section id="letter__C" class="letter__group">
-          <h2>C</h2>
-          <ol>
-            <li><a href="product-list.html">Lorem.</a></li>
-            <li><a href="product-list.html">Recusandae!</a></li>
-            <li><a href="product-list.html">Repellat.</a></li>
-          </ol>
-        </section>
-        <section id="letter__d" class="letter__group">
-          <h2>D</h2>
-          <ol>
-            <li><a href="product-list.html">Lorem.</a></li>
-            <li><a href="product-list.html">Recusandae!</a></li>
-            <li><a href="product-list.html">Repellat.</a></li>
-          </ol>
-        </section>
-        <section id="letter__e" class="letter__group">
-          <h2>E</h2>
-          <ol>
-            <li><a href="product-list.html">Lorem.</a></li>
-            <li><a href="product-list.html">Recusandae!</a></li>
-            <li><a href="product-list.html">Repellat.</a></li>
-          </ol>
-        </section>
-        <section id="letter__f" class="letter__group">
-          <h2>F</h2>
-          <ol>
-            <li><a href="product-list.html">Lorem.</a></li>
-            <li><a href="product-list.html">Recusandae!</a></li>
-            <li><a href="product-list.html">Repellat.</a></li>
-          </ol>
-        </section>
-        <section id="letter__g" class="letter__group">
-          <h2>G</h2>
-          <ol>
-            <li><a href="product-list.html">Lorem.</a></li>
-            <li><a href="product-list.html">Recusandae!</a></li>
-            <li><a href="product-list.html">Repellat.</a></li>
-          </ol>
-        </section>
-        <section id="letter__h" class="letter__group">
-          <h2>H</h2>
-          <ol>
-            <li><a href="product-list.html">Lorem.</a></li>
-            <li><a href="product-list.html">Recusandae!</a></li>
-            <li><a href="product-list.html">Repellat.</a></li>
-          </ol>
-        </section>
-      </div>
+      </section> -->
+      <div class="brand-list"></div>
     </main>
-    <aside></aside>
+
+    <template id="categories__temp">
+      <li><a href="product-list.html">Lorem.</a></li>
+    </template>
+
+    <aside>
+      <h3>Sub Categories</h3>
+      <nav id="aside__nav">
+        <ul></ul>
+      </nav>
+    </aside>
+    <template id="subcategories__temp"
+      ><li><a href="">sub1</a></li></template
+    >
     <footer></footer>
     <script src="main.js"></script>
+    <script src="categories.js"></script>
   </body>
 </html>

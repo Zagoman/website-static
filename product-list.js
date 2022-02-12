@@ -1,4 +1,19 @@
-const url = "https://kea-alt-del.dk/t7/api/products";
+const urlParams = new URLSearchParams(window.location.search);
+let start = 0;
+
+const param = urlParams.get("category")
+  ? urlParams.get("category")
+  : urlParams.get("subcategory")
+  ? urlParams.get("subcategory")
+  : "";
+
+const url = `https://kea-alt-del.dk/t7/api/products?limit=30${
+  urlParams.get("category")
+    ? `&category=${param}`
+    : urlParams.get("subcategory")
+    ? `&subcategory=${param}`
+    : ""
+}&start=${start}`;
 // fetch API
 fetch(url)
   .then((res) => res.json())
@@ -25,7 +40,9 @@ fetch(url)
       </template>
 */
 const template = document.querySelector("template").content;
+document.querySelector(".heading__main").textContent = param ? param : "All";
 const showProduct = (elem) => {
+  console.log(elem);
   const clone = template.cloneNode(true);
 
   //change content
@@ -50,6 +67,7 @@ const showProduct = (elem) => {
     clone.querySelector(".discount-tag").textContent = `${elem.discount}%`;
   } else {
     clone.querySelector(".product__price.is--prev").remove();
+    clone.querySelector(".discount-tag").remove();
     clone.querySelector(
       ".product__price.is--now"
     ).textContent = `${elem.price},-`;
