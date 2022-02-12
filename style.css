@@ -93,9 +93,6 @@ article {
   margin-top: 1rem;
   transition: background-color 0.2s ease;
 }
-.product__link:hover {
-  background-color: var(--clr-pri);
-}
 
 /* ?header */
 header {

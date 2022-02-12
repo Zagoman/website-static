@@ -67,6 +67,7 @@ const showProduct = (elem) => {
     clone.querySelector(".discount-tag").textContent = `${elem.discount}%`;
   } else {
     clone.querySelector(".product__price.is--prev").remove();
+    clone.querySelector(".discount-tag").remove();
     clone.querySelector(
       ".product__price.is--now"
     ).textContent = `${elem.price},-`;
