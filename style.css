@@ -86,13 +86,15 @@ main {
   bottom: 0;
   right: 0;
 }
-.product__price {
+.product__price,
+.price-tag {
   color: var(--clr-sec);
   font-weight: 600;
   font-size: 1.1em;
   text-decoration: line-through;
 }
-.product__price.is--now {
+.product__price.is--now,
+.price-tag.is--now {
   text-decoration: none;
   color: var(--clr-pri);
 }
@@ -122,6 +124,7 @@ main {
   display: grid;
   grid-gap: 0.5rem;
   background-color: var(--clr-acc);
+  position: relative;
 }
 .info__box {
   padding: 1rem;
@@ -250,6 +253,10 @@ footer {
   }
   .form {
     margin-top: auto;
+  }
+  .discount-tag.is--product {
+    position: inherit;
+    align-self: start;
   }
 }
 @media only screen and (min-width: 962px) {

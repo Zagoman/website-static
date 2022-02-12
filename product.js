@@ -14,6 +14,22 @@ function showProduct(product) {
     product.productdisplayname;
   clone.querySelector(".purchase__brand").textContent = product.brandname;
   clone.querySelector(".purchase__tag").textContent = product.articletype;
+  if (product.discount != null) {
+    clone.querySelector(".price-tag.is--prev").textContent = `Prev ${Math.ceil(
+      product.price
+    )},-`;
+    clone.querySelector(".price-tag.is--now").textContent = `Now ${Math.ceil(
+      product.price - (product.price * product.discount) / 100
+    )},-`;
+    clone.querySelector(".discount-tag").textContent = `${product.discount}%`;
+  } else {
+    clone.querySelector(".price-tag.is--prev").remove();
+    clone.querySelector(".discount-tag").remove();
+    clone.querySelector(
+      ".price-tag.is--now"
+    ).textContent = `${product.price},-`;
+  }
+
   clone.querySelector(".dd__model-name").textContent =
     product.productdisplayname;
   clone.querySelector(".dd__model-color").textContent = `${
