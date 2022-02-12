@@ -1,4 +1,5 @@
 const urlParams = new URLSearchParams(window.location.search);
+let start = 0;
 
 const param = urlParams.get("category")
   ? urlParams.get("category")
@@ -6,13 +7,13 @@ const param = urlParams.get("category")
   ? urlParams.get("subcategory")
   : "";
 
-const url = `https://kea-alt-del.dk/t7/api/products${
+const url = `https://kea-alt-del.dk/t7/api/products?limit=30${
   urlParams.get("category")
-    ? `?category=${param}`
+    ? `&category=${param}`
     : urlParams.get("subcategory")
-    ? `?subcategory=${param}`
+    ? `&subcategory=${param}`
     : ""
-}`;
+}&start=${start}`;
 // fetch API
 fetch(url)
   .then((res) => res.json())
