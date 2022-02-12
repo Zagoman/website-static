@@ -54,6 +54,9 @@ main {
 ol {
   list-style: none;
 }
+li > a:hover {
+  color: var(--clr-pri);
+}
 /* ?Product List */
 
 .grid__pl {
